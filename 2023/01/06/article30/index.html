@@ -1,0 +1,2093 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="关于ES6，你知道多少, 中元小日记">
+    <meta name="description" content="总结一下工作中常用的ES6语法，或许可以节省很多时间">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>关于ES6，你知道多少 | 中元小日记</title>
+    <link rel="icon" type="image/png" href="/logo1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  
+
+        <body>
+          <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">中元小日记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">中元小日记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ll-zhongyuan" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ll-zhongyuan" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+            
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">关于ES6，你知道多少</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/ES6/">
+                                <span class="chip bg-color">ES6</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ES6/" class="post-category">
+                                ES6
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-01-06
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>关于 ES6 语法，这里将 ES5 之后的语法统称为 ES6.<br>所以关于标题，大家不必纠结</p>
+<p>以下实例均已经过本人实际测试，确认可用，当然仅代表个人理解！</p>
+<h3 id="1、let-和-const"><a href="#1、let-和-const" class="headerlink" title="1、let 和 const"></a>1、let 和 const</h3><p>与 var 的区别：</p>
+<ul>
+<li>var 有变量提升，有初始化提升，值可变</li>
+<li>let 有变量提升，没有初始化提升，值可变</li>
+<li>const 有变量提升，没有初始化提升，值不可变，但如果订单一对象，则属性可变</li>
+</ul>
+<p><code>暂时性死区</code> 问题说明:其实<code>let和const</code>是由变量提升的，但是没有初始化提升：</p>
+<pre><code>var name = &quot;一起来看看吧&quot;
+function fn()&#123;
+    console.log(name)
+    let name = &quot;注意看&quot;
+&#125;
+fn()
+// Cannot access &#39;name&#39; before initialization
+</code></pre>
+<p>块级作用域解决问题：</p>
+<pre><code>for(var i = 0; i &lt; 5 ; i++)&#123;
+    setTimeout(()=&gt;&#123;
+        console.log(i)
+    &#125;)
+&#125;
+//5 5 5 5 5
+
+for(let i = 0 ; i &lt; 5 ; i++)&#123;
+    setTimeout(()=&gt;&#123;
+        console.log(i)
+    &#125;)
+&#125;
+// 0 1 2 3 4
+</code></pre>
+<h3 id="2、默认参数"><a href="#2、默认参数" class="headerlink" title="2、默认参数"></a>2、默认参数</h3><p>开发中你曾遇到过这样的问题，如果参数不传进来，你就设置默认参数</p>
+<pre><code>function fn (name, age) &#123;
+  var name = name || &#39;小天&#39;
+  var age = age || 18
+  console.log(name, age)
+&#125;
+fn()
+// 小天 18
+</code></pre>
+<p>ES6 默认参数写法</p>
+<pre><code>function fn (name = &#39;小天&#39;, age = 18) &#123;
+  console.log(name, age)
+&#125;
+fn()
+// 小天 18
+fn(&#39;小天&#39;, 22)
+// 小天 22
+</code></pre>
+<h3 id="3、扩展运算符"><a href="#3、扩展运算符" class="headerlink" title="3、扩展运算符"></a>3、扩展运算符</h3><p>提到拼接数组，或许很多人想到的都是：</p>
+<pre><code>const arr1 = [1, 2, 4]
+const arr2 = [4, 5, 7]
+const arr3 = [7, 8, 9]
+
+const arr = arr1.concat(arr2).concat(arr3)
+[ 1, 2, 4, 4, 5, 7, 7, 8, 9]
+</code></pre>
+<p>但是 ES6 提供了更为优雅地拼接方法</p>
+<pre><code>const arr1 = [1, 2, 4]
+const arr2 = [4, 5, 7]
+const arr3 = [7, 8, 9]
+
+const arr = [...arr1, ...arr2, ...arr3]
+[ 1, 2, 4, 4, 5, 7, 7, 8, 9]
+</code></pre>
+<h3 id="4、剩余参数"><a href="#4、剩余参数" class="headerlink" title="4、剩余参数"></a>4、剩余参数</h3><p>一个函数，传入参数的个数是不确定的，这就可以用 ES6 的剩余参数</p>
+<pre><code>function fn (name, ...params) &#123;
+   console.log(name)
+   console.log(params)
+&#125;
+fn (&#39;小天&#39;, 1, 2)
+// 小天 [ 1, 2 ]
+fn (&#39;小天&#39;, 1, 2, 3, 4, 5)
+// 小天 [ 1, 2, 3, 4, 5 ]
+</code></pre>
+<h3 id="5、模板字符串"><a href="#5、模板字符串" class="headerlink" title="5、模板字符串"></a>5、模板字符串</h3><p>以前拼接字符串</p>
+<pre><code>const name = &#39;小天&#39;
+const age = &#39;22&#39;
+
+console.log(name + &#39;今年&#39; + age + &#39;岁啦&#39;)
+//小天今年22岁啦
+</code></pre>
+<p>ES6 拼接字符串</p>
+<pre><code>const name = &#39;小天&#39;
+const age = &#39;22&#39;
+
+console.log(`$&#123;name&#125;今年$&#123;age&#125;岁啦`)
+//小天今年22岁啦
+</code></pre>
+<h3 id="6、Object-keys"><a href="#6、Object-keys" class="headerlink" title="6、Object.keys"></a>6、Object.keys</h3><p>可以用来获取对象的 key 的集合，进而可以获得对应 key 的 value</p>
+<pre><code>const obj = &#123;
+  name: &#39;小天&#39;,
+  age: 22,
+  gender: &#39;男&#39;
+&#125;
+
+const keys = Object.keys(obj)
+console.log(keys)
+// [ &#39;name&#39;, &#39;age&#39;, &#39;gender&#39; ]
+</code></pre>
+<h3 id="7、箭头函数"><a href="#7、箭头函数" class="headerlink" title="7、箭头函数"></a>7、箭头函数</h3><p>以前我们使用普通函数</p>
+<pre><code>function fn () &#123;&#125;
+
+const fn = function () &#123;&#125;
+</code></pre>
+<p>ES6 新加了<code>箭头函数</code></p>
+<pre><code>const fn = () =&gt; &#123;&#125;
+
+// 如果只有一个参数，可以省略括号
+const fn = name =&gt; &#123;&#125;
+
+// 如果函数体里只有一句return
+const fn = name =&gt; &#123;
+    return 2 * name
+&#125;
+// 可简写为
+const fn = name =&gt; 2 * name
+// 如果返回的是对象
+const fn = name =&gt; (&#123; name: name &#125;)
+</code></pre>
+<p>普通函数和箭头函数的区别：</p>
+<ul>
+<li>1、箭头函数不可作为构造函数，不能使用 new</li>
+<li>2、箭头函数没有自己的 this</li>
+<li>3、箭头函数没有 arguments 对象</li>
+<li>4、箭头函数没有原型对象</li>
+</ul>
+<h3 id="8、Array-prototype-forEach"><a href="#8、Array-prototype-forEach" class="headerlink" title="8、Array.prototype.forEach"></a>8、Array.prototype.forEach</h3><p>ES6 新加的数组遍历方法</p>
+<pre><code>const eachArr = [1, 2, 3, 4, 5]
+
+// 三个参数：遍历项 索引 数组本身
+// 配合箭头函数
+eachArr.forEach((item, index, arr) =&gt; &#123;
+  console.log(item, index, arr)
+&#125;)
+1 0 [ 1, 2, 3, 4, 5 ]
+2 1 [ 1, 2, 3, 4, 5 ]
+3 2 [ 1, 2, 3, 4, 5 ]
+4 3 [ 1, 2, 3, 4, 5 ]
+5 4 [ 1, 2, 3, 4, 5 ]
+</code></pre>
+<h3 id="9、Array-prototype-map"><a href="#9、Array-prototype-map" class="headerlink" title="9、Array.prototype.map"></a>9、Array.prototype.map</h3><p>常用于返回一个处理过后的新数组</p>
+<pre><code>const mapArr = [1, 2, 3, 4, 5]
+
+// 三个参数：遍历项 索引 数组本身
+// 配合箭头函数，对每一个元素进行翻倍
+const mapArr2 = mapArr.map((num, index, arr) =&gt; 2 * num)
+console.log(mapArr2)
+[ 2, 4, 6, 8, 10 ]
+</code></pre>
+<h3 id="10、Array-prototype-filter"><a href="#10、Array-prototype-filter" class="headerlink" title="10、Array.prototype.filter"></a>10、Array.prototype.filter</h3><p>顾名思义，用来过滤的方法</p>
+<pre><code>const filterArr = [1, 2, 3, 4, 5]
+
+// 三个参数：遍历项 索引 数组本身
+// 配合箭头函数，返回大于3的集合
+const filterArr2 = filterArr.filter((num, index, arr) =&gt; num &gt; 3)
+console.log(filterArr2)
+[ 4, 5 ]
+</code></pre>
+<h3 id="11、Array-prototype-some"><a href="#11、Array-prototype-some" class="headerlink" title="11、Array.prototype.some"></a>11、Array.prototype.some</h3><p>some，意思就是只要有一个是真，那就返回真</p>
+<pre><code>const someArr = [false, true, false, true, false]
+
+// 三个参数：遍历项 索引 数组本身
+// 配合箭头函数，只要有一个为true，就返回true，一个都true都没有，就返回false
+const someArr2 = someArr.some((bol, index, arr) =&gt; bol)
+console.log(someArr2)
+true
+</code></pre>
+<h3 id="12、Array-prototype-every"><a href="#12、Array-prototype-every" class="headerlink" title="12、Array.prototype.every"></a>12、Array.prototype.every</h3><p>every 跟 some 是相反的，some 是只要有一个就行，every 是要所有为真才返回真</p>
+<pre><code>const everyArr = [false, true, false, true, false]
+
+// 三个参数：遍历项 索引 数组本身
+// 配合箭头函数，需要所有为true，才返回true，否则返回false
+const everyArr2 = everyArr.every((bol, index, arr) =&gt; bol)
+console.log(everyArr2)
+</code></pre>
+<h3 id="13、Array-prototype-reduce"><a href="#13、Array-prototype-reduce" class="headerlink" title="13、Array.prototype.reduce"></a>13、Array.prototype.reduce</h3><ul>
+<li>第一个参数 callback 函数： pre 为上次 return 的值，next 为数组的本次遍历的项</li>
+<li>第二个参数为初始值，也是第一个 pre</li>
+</ul>
+<p>举两个例子：</p>
+<pre><code>// 计算 1 + 2 + 3 + 4 + 5
+const reduceArr = [1, 2, 3, 4, 5]
+const sum = reduceArr.reduce((pre, next) =&gt; &#123;
+  return pre + next
+&#125;, 0)
+console.log(sum)
+// 15
+
+// 统计元素出现个数
+const nameArr = [&#39;小天&#39;, &#39;xiaotian&#39;, &#39;小天&#39;, &#39;小天&#39;, &#39;科比&#39;]
+const totalObj = nameArr.reduce((pre, next) =&gt; &#123;
+  if (pre[next]) &#123;
+    pre[next]++
+  &#125; else &#123;
+    pre[next] = 1
+  &#125;
+  return pre
+&#125;, &#123;&#125;)
+console.log(totalObj)
+// &#123; &#39;小天&#39;: 3, xiaotian: 1, &#39;科比&#39;: 1 &#125;
+</code></pre>
+<h3 id="14、对象属性同名简写"><a href="#14、对象属性同名简写" class="headerlink" title="14、对象属性同名简写"></a>14、对象属性同名简写</h3><p>以前同名属性需要这么写</p>
+<pre><code>const name = &#39;小天&#39;
+const age = &#39;22&#39;
+
+const obj = &#123;
+  name: name,
+  age: age
+&#125;
+
+console.log(obj)
+// &#123; name: &#39;小天&#39;, age: &#39;22&#39; &#125;
+</code></pre>
+<p>ES6 新增语法，只需这么写</p>
+<pre><code>const name = &#39;小天&#39;
+const age = &#39;22&#39;
+
+// 属性同名可简写
+const obj = &#123;
+  name,
+  age
+&#125;
+
+console.log(obj)
+// &#123; name: &#39;小天&#39;, age: &#39;22&#39; &#125;
+</code></pre>
+<h3 id="15、Promise"><a href="#15、Promise" class="headerlink" title="15、Promise"></a>15、Promise</h3><p><code>Promise</code>，中文名为<code>承诺</code>，承诺在哪呢？承诺在，一旦他的状态改变，就不会再改。</p>
+<p>看看基本使用</p>
+<ul>
+<li><p>成功状态</p>
+<pre><code>  function requestData () &#123;
+    // 模拟请求
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        resolve(&#39;小天&#39;)
+      &#125;, 1000)
+    &#125;)
+  &#125;
+  requestData().then(res =&gt; &#123;
+    console.log(res)
+    // 一秒钟后输出 &#39;小天&#39;
+  &#125;, err =&gt; &#123;
+    console.log(err)
+  &#125;)
+</code></pre>
+</li>
+<li><p>失败状态</p>
+<pre><code>  function requestData () &#123;
+    // 模拟请求
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        reject(&#39;错误啦&#39;)
+      &#125;, 1000)
+    &#125;)
+  &#125;
+
+  requestData().then(res =&gt; &#123;
+    console.log(res)
+  &#125;, err =&gt; &#123;
+    console.log(err)
+    // 一秒钟后输出 &#39;错误啦&#39;
+  &#125;)
+</code></pre>
+</li>
+<li><p><code>all</code>方法</p>
+<p>接收一个 Promise 数组，数组中如有非 Promise 项，则此项当做成功<br>如果所有 Promise 都成功，则返回成功结果数组<br>如果有一个 Promise 失败，则返回这个失败结果</p>
+<pre><code>  // 如果全都为成功
+  function fn(time) &#123;
+   return new Promise((resolve, reject) =&gt; &#123;
+     console.log(88)
+     setTimeout(() =&gt; &#123;
+       resolve(`$&#123;time&#125;毫秒后我成功啦！！！`)
+     &#125;, time)
+   &#125;)
+  &#125;
+
+  Promise.all([fn(2000), fn(3000), fn(1000)]).then(res =&gt; &#123;
+    // 3秒后输出 [ &#39;2000毫秒后我成功啦！！！&#39;, &#39;3000毫秒后我成功啦！！！&#39;,    &#39;1000毫秒后我成功啦！！！&#39; ]
+    console.log(res)
+  &#125;, err =&gt; &#123;
+    console.log(err)
+  &#125;)
+
+  // 如果有一个失败
+  function fn(time, isResolve) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        isResolve ? resolve(`$&#123;time&#125;毫秒后我成功啦！！！`) : reject(`$        &#123;time&#125;毫秒后我失败啦！！！`)
+      &#125;, time)
+    &#125;)
+  &#125;
+
+  Promise.all([fn(2000, true), fn(3000), fn(1000, true)]).then(res =&gt; &#123;
+    console.log(res)
+  &#125;, err =&gt; &#123;
+    console.log(err)
+    // 3秒后输出 &#39;3000毫秒后我失败啦！！！&#39;
+  &#125;)
+</code></pre>
+</li>
+<li><p><code>race</code>方法</p>
+<p>接收一个 Promise 数组，数组中如有非 Promise 项，则此项当做成功<br>哪个 Promise 最快得到结果，就返回那个结果，无论成功失败</p>
+<pre><code>  function fn(time, isResolve) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        isResolve ? resolve(`$&#123;time&#125;毫秒后我成功啦！！！`) : reject(`$    &#123;time&#125;毫秒后我失败啦！！！`)
+      &#125;, time)
+    &#125;)
+  &#125;
+
+  Promise.race([fn(2000, true), fn(3000), fn(1000)]).then(res =&gt; &#123;
+    console.log(res)
+  &#125;, err =&gt; &#123;
+    console.log(err)
+    // 1秒后输出
+  &#125;)
+</code></pre>
+</li>
+</ul>
+<h3 id="16、class"><a href="#16、class" class="headerlink" title="16、class"></a>16、class</h3><p>以前使用构造函数生成对象，这么做</p>
+<pre><code>function Person(name) &#123;
+  this.name = name
+&#125;
+
+Person.prototype.sayName = function () &#123;
+  console.log(this.name)
+&#125;
+
+const kobe = new Person(&#39;科比&#39;)
+kobe.sayName()
+// 科比
+</code></pre>
+<p>而有了 ES6 的<code>class</code>可以这么做</p>
+<pre><code>class Person &#123;
+  constructor(name) &#123;
+    // 构造器
+    this.name = name
+  &#125;
+
+  sayName() &#123;
+    console.log(this.name)
+  &#125;
+&#125;
+
+const kobe = new Person(&#39;科比&#39;)
+kobe.sayName()
+// 科比
+</code></pre>
+<p>值得一提的是，<code>class</code>本质也是<code>function</code>，<code>class</code>是<code>function</code>的<code>语法糖</code></p>
+<pre><code>class Person &#123;&#125;
+
+console.log(typeof Person)
+// function
+</code></pre>
+<p>除了以上，还需要知道 class 的以下知识点</p>
+<p>静态属性和静态方法，使用<code>static</code>定义的属性和方法只能 class 自己用，实例用不了</p>
+<pre><code>class Person &#123;
+  constructor(name) &#123;
+    this.name = name
+  &#125;
+
+  static age = 22
+
+  static fn() &#123;
+    console.log(&#39;哈哈&#39;)
+  &#125;
+&#125;
+console.log(Person.age)
+// 22
+Person.fn()
+// 哈哈
+
+const sunshine_lin = new Person(&#39;小天&#39;)
+console.log(sunshine_lin.age)
+// undefined
+sunshine_lin.fn()
+// fn is not a function
+</code></pre>
+<p><code>extend</code>继承</p>
+<pre><code>class Animal &#123;
+  constructor(name, age) &#123;
+    this.name = name
+    this.age = age
+  &#125;
+&#125;
+
+class Cat extends Animal &#123;
+  say() &#123;
+    console.log(this.name, this.age)
+  &#125;
+&#125;
+
+const cat = new Cat(&#39;ketty&#39;, 5)
+// 继承了Animal的构造器
+cat.say()
+// ketty 5
+</code></pre>
+<h3 id="17、解构赋值"><a href="#17、解构赋值" class="headerlink" title="17、解构赋值"></a>17、解构赋值</h3><p>以前想提取对象里的属性需要这么做</p>
+<pre><code>const obj = &#123;
+  name: &#39;小天&#39;,
+  age: 22,
+  gender: &#39;男&#39;
+&#125;
+
+const name = obj.name
+const age = obj.age
+const gender = obj.gender
+console.log(name, age, gender)
+// 小天 22 男
+</code></pre>
+<p>ES6 新增了解构赋值的语法</p>
+<pre><code>const obj = &#123;
+  name: &#39;小天&#39;,
+  age: 22,
+  gender: &#39;男&#39;,
+  doing: &#123;
+    morning: &#39;摸鱼&#39;,
+    afternoon: &#39;摸鱼&#39;,
+    evening: &#39;sleep&#39;
+  &#125;
+&#125;
+
+const &#123; name, age, gender &#125; = obj
+console.log(name, age, gender)
+// 小天 22 男
+
+// 解构重名
+const &#123; name: myname &#125; = obj
+console.log(myname)
+// 小天
+
+// 嵌套解构
+const &#123; doing: &#123; evening &#125; &#125; = obj
+console.log(evening)
+// sleep
+</code></pre>
+<p>也可以进行数组的解构</p>
+<pre><code>const arr = [1, 2, 3]
+
+const [a, b, c] = arr
+console.log(a, b, c)
+// 1 2 3
+
+// 默认赋值
+const [a, b, c, d = 5] = arr
+console.log(a, b, c, d)
+// 1 2 3 5
+
+// 乱序解构
+const &#123; 1: a, 0: b, 2: c &#125; = arr
+console.log(a, b, c) // 2 1 3
+</code></pre>
+<h3 id="18、find-和-findIndex"><a href="#18、find-和-findIndex" class="headerlink" title="18、find 和 findIndex"></a>18、find 和 findIndex</h3><ul>
+<li><p>find：找到返回被找元素，找不到返回 undefined</p>
+</li>
+<li><p>findIndex：找到返回被找元素索引，找不到返回-1</p>
+<pre><code>  const findArr = [
+    &#123; name: &#39;科比&#39;, no: &#39;24&#39; &#125;,
+    &#123; name: &#39;罗斯&#39;, no: &#39;1&#39; &#125;,
+    &#123; name: &#39;利拉德&#39;, no: &#39;0&#39; &#125;
+  ]
+
+  const kobe = findArr.find((&#123; name &#125;) =&gt; name === &#39;科比&#39;)
+  const kobeIndex = findArr.findIndex((&#123; name &#125;) =&gt; name === &#39;科比&#39;)
+  console.log(kobe)
+
+  // &#123; name: &#39;科比&#39;, no: &#39;24&#39; &#125;
+  console.log(kobeIndex)
+  // 0
+</code></pre>
+</li>
+</ul>
+<h3 id="19、for-of-和-for-in"><a href="#19、for-of-和-for-in" class="headerlink" title="19、for of 和 for in"></a>19、for of 和 for in</h3><ul>
+<li>for in ：遍历方法，可遍历对象和数组</li>
+<li>for of ：遍历方法，只能遍历数组，不能遍历非 iterable 对象</li>
+</ul>
+<p>先看 for in：</p>
+<pre><code>const obj = &#123; name: &#39;小天&#39;, age: 22, gender: &#39;男&#39; &#125;
+const arr = [1, 2, 3, 4, 5]
+
+for(let key in obj) &#123;
+  console.log(key)
+&#125;
+name
+age
+gender
+
+for(let index in arr) &#123;
+  console.log(index)
+&#125;
+0 1 2 3 4
+</code></pre>
+<p>再看 for of：</p>
+<pre><code>for(let item of arr) &#123;
+  console.log(item)
+&#125;
+1 2 3 4 5
+</code></pre>
+<h3 id="20、Set-和-Map"><a href="#20、Set-和-Map" class="headerlink" title="20、Set 和 Map"></a>20、Set 和 Map</h3><ul>
+<li>Set</li>
+</ul>
+<p>先说说<code>Set</code>的基本用法</p>
+<pre><code>// 可不传数组
+const set1 = new Set()
+set1.add(1)
+set1.add(2)
+console.log(set1)
+// Set(2) &#123; 1, 2 &#125;
+
+// 也可传数组
+const set2 = new Set([1, 2, 3])
+// 增加元素 使用 add
+set2.add(4)
+set2.add(&#39;小天&#39;)
+console.log(set2)
+// Set(5) &#123; 1, 2, 3, 4, &#39;小天&#39; &#125;
+// 是否含有某个元素 使用 has
+console.log(set2.has(2))
+// true
+// 查看长度 使用 size
+console.log(set2.size)
+// 5
+// 删除元素 使用 delete
+set2.delete(2)
+console.log(set2)
+// Set(4) &#123; 1, 3, 4, &#39;小天&#39; &#125;
+</code></pre>
+<p>再说说<code>Set</code>的不重复性</p>
+<pre><code>// 增加一个已有元素，则增加无效，会被自动去重
+const set1 = new Set([1])
+set1.add(1)
+console.log(set1)
+// Set(1) &#123; 1 &#125;
+
+// 传入的数组中有重复项，会自动去重
+const set2 = new Set([1, 2, &#39;小天&#39;, 3, 3, &#39;小天&#39;])
+console.log(set2)
+// Set(4) &#123; 1, 2, &#39;小天&#39;, 3 &#125;
+</code></pre>
+<p><code>Set</code>的不重复性中，要注意<code>引用数据类型和NaN</code></p>
+<pre><code>// 两个对象都是不同的指针，所以没法去重
+const set1 = new Set([1, &#123;name: &#39;小天&#39;&#125;, 2, &#123;name: &#39;小天&#39;&#125;])
+console.log(set1)
+// Set(4) &#123; 1, &#123; name: &#39;小天&#39; &#125;, 2, &#123; name: &#39;小天&#39; &#125; &#125;
+
+
+// 如果是两个对象是同一指针，则能去重
+const obj = &#123;name: &#39;小天&#39;&#125;
+const set2 = new Set([1, obj, 2, obj])
+console.log(set2)
+// Set(3) &#123; 1, &#123; name: &#39;小天&#39; &#125;, 2 &#125;
+</code></pre>
+<p>咱们都知道 NaN !== NaN，NaN 是自身不等于自身的，但是在 Set 中他还是会被去重</p>
+<pre><code>const set = new Set([1, NaN, 1, NaN])
+console.log(set)
+// Set(2) &#123; 1, NaN &#125;
+</code></pre>
+<p>利用 Set 的不重复性，可以实现数组去重</p>
+<pre><code>const arr = [1, 2, 3, 4, 4, 5, 5, 66, 9, 1]
+
+// Set可利用扩展运算符转为数组哦
+const quchongArr = [...new Set(arr)]
+console.log(quchongArr)
+// [1,  2, 3, 4, 5, 66, 9]
+</code></pre>
+<ul>
+<li>Map</li>
+</ul>
+<p><code>Map</code>对比<code>object</code>最大的好处就是，key 不受<code>类型限制</code></p>
+<pre><code>// 定义map
+const map1 = new Map()
+// 新增键值对 使用 set(key, value)
+map1.set(true, 1)
+map1.set(1, 2)
+map1.set(&#39;哈哈&#39;, &#39;嘻嘻嘻&#39;)
+console.log(map1)
+// Map(3) &#123; true =&gt; 1, 1 =&gt; 2, &#39;哈哈&#39; =&gt; &#39;嘻嘻嘻&#39; &#125;
+// 判断map是否含有某个key 使用 has(key)
+console.log(map1.has(&#39;哈哈&#39;))
+// true
+// 获取map中某个key对应的value 使用 get(key)
+console.log(map1.get(true))
+// 2
+// 删除map中某个键值对 使用 delete(key)
+map1.delete(&#39;哈哈&#39;)
+console.log(map1)
+// Map(2) &#123; true =&gt; 1, 1 =&gt; 2 &#125;
+
+// 定义map，也可传入键值对数组集合
+const map2 = new Map([[true, 1], [1, 2], [&#39;哈哈&#39;, &#39;嘻嘻嘻&#39;]])
+console.log(map2)
+// Map(3) &#123; true =&gt; 1, 1 =&gt; 2, &#39;哈哈&#39; =&gt; &#39;嘻嘻嘻&#39; &#125;
+</code></pre>
+<h3 id="21、includes"><a href="#21、includes" class="headerlink" title="21、includes"></a>21、includes</h3><p>传入元素，如果数组中能找到此元素，则返回 true，否则返回 false</p>
+<pre><code>const includeArr = [1, 2 , 3, &#39;小天&#39;, &#39;科比&#39;]
+
+const isKobe = includeArr.includes(&#39;科比&#39;)
+console.log(isKobe) // true
+</code></pre>
+<p>跟 indexOf 很像，但还是有区别的</p>
+<pre><code>const arr = [1, 2, NaN]
+
+console.log(arr.indexOf(NaN)) // -1  indexOf找不到NaN
+console.log(arr.includes(NaN)) // true includes能找到NaN
+</code></pre>
+<h3 id="22、求幂运算符"><a href="#22、求幂运算符" class="headerlink" title="22、求幂运算符"></a>22、求幂运算符</h3><p>以前求幂，需要这么写</p>
+<pre><code>const num = Math.pow(3, 2) // 9
+</code></pre>
+<p>ES7 提供了求幂运算符：<code>**</code></p>
+<pre><code>const num = 3 ** 2 // 9
+</code></pre>
+<h3 id="23、Object-values"><a href="#23、Object-values" class="headerlink" title="23、Object.values"></a>23、Object.values</h3><p>可以用来获取对象的 value 的集合</p>
+<pre><code>const obj = &#123;
+  name: &#39;小天&#39;,
+  age: 22,
+  gender: &#39;男&#39;
+&#125;
+
+const values = Object.values(obj)
+console.log(values)
+// [ &#39;小天&#39;, 22, &#39;男&#39; ]
+</code></pre>
+<h3 id="24、Object-entries"><a href="#24、Object-entries" class="headerlink" title="24、Object.entries"></a>24、Object.entries</h3><p>可以用来获取对象的键值对集合</p>
+<pre><code>const obj = &#123;
+  name: &#39;小天&#39;,
+  age: 22,
+  gender: &#39;男&#39;
+&#125;
+
+const entries = Object.entries(obj)
+console.log(entries)
+// [ [ &#39;name&#39;, &#39;小天&#39; ], [ &#39;age&#39;, 22 ], [ &#39;gender&#39;, &#39;男&#39; ] ]
+</code></pre>
+<h3 id="25、async-await"><a href="#25、async-await" class="headerlink" title="25、async/await"></a>25、async/await</h3><p>这个是很常用的语法了，我的理解就是：<strong>以同步方式执行异步操作</strong></p>
+<p>我们平时可能会遇到这种场景，接口一，请求到数据一，而数据一被当做请求二的参数去请求数据二，我们会用 Promise 这么做</p>
+<pre><code>function fn() &#123;
+  // 模拟第一次请求
+  return new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      resolve(5)
+    &#125;, 1000)
+  &#125;).then(res =&gt; &#123;
+    // 模拟第二次请求
+    new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        // 拿第一次请求的数据去乘10，当做第二次请求的数据
+        resolve(res * 10)
+      &#125;, 2000)
+    &#125;).then(sres =&gt; &#123;
+      console.log(sres)
+    &#125;)
+
+  &#125;)
+&#125;
+fn()
+// 1 + 2 = 3 3秒后输出 50
+</code></pre>
+<p>这样的嵌套是不美观的，如果有很多个接口，那就会嵌套很多层，此时我们可以使用 async/await 来以同步方式执行异步，注意以下几点：</p>
+<ul>
+<li><p>await 只能在 async 函数里使用</p>
+</li>
+<li><p>await 后面最好接 Promise，如果后面接的是普通函数则会直接执行</p>
+</li>
+<li><p>async 函数返回的是一个 Promise</p>
+<pre><code>  function fn1 () &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        resolve(5)
+      &#125;, 1000)
+    &#125;)
+  &#125;
+
+  function fn2 (data) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        resolve(data * 10)
+      &#125;, 2000)
+    &#125;)
+  &#125;
+
+  async function req () &#123;
+    // 同步方式执行异步，像排队一样
+    const data1 = await fn1()
+    // 等待1秒后返回数据再往下执行
+    const data2 = await fn2(data1)
+    // 拿data1去请求2秒后，往下走
+    console.log(data2)
+    // 总共3秒后 输出 50
+  &#125;
+  req()
+</code></pre>
+</li>
+</ul>
+<h3 id="26、for-await-of"><a href="#26、for-await-of" class="headerlink" title="26、for await of"></a>26、for await of</h3><p>我们来看以下场景哈</p>
+<pre><code>function fn (time) &#123;
+  return new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      resolve(`$&#123;time&#125;毫秒后我成功啦！！！`)
+    &#125;, time)
+  &#125;)
+&#125;
+
+fn(3000).then(res =&gt; console.log(res))
+fn(1000).then(res =&gt; console.log(res))
+fn(2000).then(res =&gt; console.log(res))
+
+结果是
+
+1000毫秒后我成功啦！！！
+2000毫秒后我成功啦！！！
+3000毫秒后我成功啦！！！
+</code></pre>
+<p>但是我想要这个结果</p>
+<pre><code>3000毫秒后我成功啦！！！
+
+1000毫秒后我成功啦！！！
+
+2000毫秒后我成功啦！！！
+</code></pre>
+<p>第一时间我们肯定想到的是<code>async/await</code></p>
+<pre><code>function fn (time) &#123;
+  return new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      resolve(`$&#123;time&#125;毫秒后我成功啦！！！`)
+    &#125;, time)
+  &#125;)
+&#125;
+
+async function asyncFn () &#123;
+  // 排队
+  const data1 = await fn(3000)
+  console.log(data1)
+  // 3秒后 3000毫秒后我成功啦！！！
+  const data2 = await fn(1000)
+  console.log(data2)
+  // 再过1秒 1000毫秒后我成功啦！！！
+  const data3 = await fn(2000)
+  console.log(data3)
+  // 再过2秒 2000毫秒后我成功啦！！！
+&#125;
+</code></pre>
+<p>但是上面代码也是有缺点的，如果有几十个，那不是得写几十个 await，有没有一种方法可以通过循环来输出呢？</p>
+<pre><code>function fn (time) &#123;
+  return new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      resolve(`$&#123;time&#125;毫秒后我成功啦！！！`)
+    &#125;, time)
+  &#125;)
+&#125;
+
+async function asyncFn () &#123;
+  const arr = [fn(3000), fn(1000), fn(1000), fn(2000), fn(500)]
+  for await (let x of arr) &#123;
+    console.log(x)
+  &#125;
+&#125;
+
+asyncFn()
+3000毫秒后我成功啦！！！
+1000毫秒后我成功啦！！！
+1000毫秒后我成功啦！！！
+2000毫秒后我成功啦！！！
+500毫秒后我成功啦！！！
+</code></pre>
+<h3 id="27、Promise-finally"><a href="#27、Promise-finally" class="headerlink" title="27、Promise.finally"></a>27、Promise.finally</h3><p>新增的 Promise 方法，无论失败或者成功状态，都会执行这个函数</p>
+<pre><code>// 成功
+new Promise((resolve, reject) =&gt; &#123;
+  resolve(&#39;成功喽&#39;)
+&#125;).then(
+  res =&gt; &#123; console.log(res) &#125;,
+  err =&gt; &#123; console.log(err) &#125;
+).finally(() =&gt; &#123; console.log(&#39;我是finally&#39;) &#125;)
+// 失败喽
+new Promise((resolve, reject) =&gt; &#123;
+  reject(&#39;失败喽&#39;)
+&#125;).then(
+  res =&gt; &#123; console.log(res) &#125;,
+  err =&gt; &#123; console.log(err) &#125;
+).finally(() =&gt; &#123; console.log(&#39;我是finally&#39;) &#125;)
+</code></pre>
+<h3 id="28、Array-flat"><a href="#28、Array-flat" class="headerlink" title="28、Array.flat"></a>28、Array.flat</h3><p>有一个二维数组，我想让他变成一维数组：</p>
+<pre><code>const arr = [1, 2, 3, [4, 5, 6]]
+
+console.log(arr.flat())
+// [ 1, 2, 3, 4, 5, 6 ]
+</code></pre>
+<p>还可以传参数，参数为降维的次数</p>
+<pre><code>const arr = [1, 2, 3, [4, 5, 6, [7, 8, 9]]]
+
+console.log(arr.flat(2))
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<p>如果传的是一个无限大的数字，那么就实现了多维数组(无论几维)降为一维数组</p>
+<pre><code>const arr = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]]
+
+console.log(arr.flat(Infinity))
+[
+   1,  2, 3, 4,  5,
+   6,  7, 8, 9, 10,
+   11, 12
+]
+</code></pre>
+<h3 id="29、Array-flatMap"><a href="#29、Array-flatMap" class="headerlink" title="29、Array.flatMap"></a>29、Array.flatMap</h3><p>现在给你一个需求</p>
+<pre><code>let arr = [&quot;科比 詹姆斯 安东尼&quot;, &quot;利拉德 罗斯 麦科勒姆&quot;];
+</code></pre>
+<p>将上面数组转为</p>
+<pre><code>[ &#39;科比&#39;, &#39;詹姆斯&#39;, &#39;安东尼&#39;, &#39;利拉德&#39;, &#39;罗斯&#39;, &#39;麦科勒姆&#39; ]
+</code></pre>
+<p>第一时间想到<code>map + flat</code></p>
+<pre><code>console.log(arr.map(x =&gt; x.split(&quot; &quot;)).flat());
+// [ &#39;科比&#39;, &#39;詹姆斯&#39;, &#39;安东尼&#39;, &#39;利拉德&#39;, &#39;罗斯&#39;, &#39;麦科勒姆&#39; ]
+</code></pre>
+<p><code>flatMap</code>就是<code>flat + map</code></p>
+<pre><code>console.log(arr.flatMap(x =&gt; x.split(&quot; &quot;)));
+// [ &#39;科比&#39;, &#39;詹姆斯&#39;, &#39;安东尼&#39;, &#39;利拉德&#39;, &#39;罗斯&#39;, &#39;麦科勒姆&#39; ]
+</code></pre>
+<h3 id="30、Promise-allSettled"><a href="#30、Promise-allSettled" class="headerlink" title="30、Promise.allSettled"></a>30、Promise.allSettled</h3><p>ES11 新增的 Promise 的方法</p>
+<ul>
+<li><p>接收一个 Promise 数组，数组中如有非 Promise 项，则此项当做成功</p>
+</li>
+<li><p>把每一个 Promise 的结果，集合成数组，返回</p>
+<pre><code>  function fn(time, isResolve) &#123;
+    return new Promise((resolve, reject) =&gt; &#123;
+      setTimeout(() =&gt; &#123;
+        isResolve ? resolve(`$&#123;time&#125;毫秒后我成功啦！！！`) : reject(`$&#123;time&#125;毫秒后我失败啦！！！`)
+      &#125;, time)
+    &#125;)
+  &#125;
+
+  Promise.allSettled([fn(2000, true), fn(3000), fn(1000)]).then(res =&gt; &#123;
+    console.log(res)
+    // 3秒后输出
+    [
+    &#123; status: &#39;fulfilled&#39;, value: &#39;2000毫秒后我成功啦！！！&#39; &#125;,
+    &#123; status: &#39;rejected&#39;, reason: &#39;3000毫秒后我失败啦！！！&#39; &#125;,
+    &#123; status: &#39;rejected&#39;, reason: &#39;1000毫秒后我失败啦！！！&#39; &#125;
+  ]
+  &#125;)
+</code></pre>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">中元</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhongyuan.space/2023/01/06/article30/">https://zhongyuan.space/2023/01/06/article30/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">中元</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/01/18/article31/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/24.jpg" class="responsive-img" alt="keep-alive">
+                        
+                        <span class="card-title">keep-alive</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue中常用的组件keep-alive的基本原理
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/30/article28/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/20.jpg" class="responsive-img" alt="防止数据重复提交的6种方法">
+                        
+                        <span class="card-title">防止数据重复提交的6种方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            6种超简单的方法！
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 中元小日记<br />'
+            + '文章作者: 中元<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul" title="显示目录"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+              <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8842516677"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+            
+
+                <div class="container row center-align">
+                    <div class="col s12 m8 l8 copy-right">
+                        <div>
+                            Copyright&nbsp;&copy;
+                            <a href="/about" target="_blank">
+                                中元
+                            </a>
+                            &nbsp;&nbsp;&nbsp;
+                            
+                                <span id="icp"><img src="/medias/icp.png"
+                                        style="vertical-align: text-bottom;" />&nbsp;豫ICP备
+                                    <a href="https://beian.miit.gov.cn" target="_blank">
+                                        豫ICP备2023006378号-1
+                                    </a>
+                                </span>
+                                
+                        </div>
+                        <p>
+                            <span id="sitetime"></span><span class="my-face"><span>ღゝ◡╹)ノ</span><span>♡</span></span>
+                        </p>
+                        
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        <span id="busuanzi_container_site_pv">
+                                                            &nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                                                                1<span id="busuanzi_value_site_pv"
+                                                                    class="white-color"></span>
+                                                        </span>
+                                                        
+                                                            
+                                                                <span id="busuanzi_container_site_uv">
+                                                                    &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                                                                        1<span id="busuanzi_value_site_uv"
+                                                                            class="white-color"></span>
+                                                                </span>
+                                                                
+                                                                    <br>
+
+                                                                    <!-- 运行天数提醒. -->
+                                                                    <script>
+                                                                        function siteTime() {
+                                                                            window.setTimeout("siteTime()", 1000);
+                                                                            var seconds = 1000;
+                                                                            var minutes = seconds * 60;
+                                                                            var hours = minutes * 60;
+                                                                            var days = hours * 24;
+                                                                            var years = days * 365;
+                                                                            var today = new Date();
+                                                                            var todayYear = today.getFullYear();
+                                                                            var todayMonth = today.getMonth() + 1;
+                                                                            var todayDate = today.getDate();
+                                                                            var todayHour = today.getHours();
+                                                                            var todayMinute = today.getMinutes();
+                                                                            var todaySecond = today.getSeconds();
+
+                                                                            /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                                                                            year - 作为date对象的年份，为4位年份值
+                                                                            month - 0-11之间的整数，做为date对象的月份
+                                                                            day - 1-31之间的整数，做为date对象的天数
+                                                                            hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                                                                            minutes - 0-59之间的整数，做为date对象的分钟数
+                                                                            seconds - 0-59之间的整数，做为date对象的秒数
+                                                                            microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+                                                                            var t1 = Date.UTC(2023, 04, 05, 00, 00, 00); //北京时间2020-08-10 00:00:00
+                                                                            var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                                                                            var diff = t2 - t1;
+                                                                            var diffYears = Math.floor(diff / years);
+                                                                            var diffDays = Math.floor((diff / days) - diffYears * 365);
+                                                                            var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                                                                            var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                                                                            var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+                                                                                minutes) / seconds);
+                                                                            document.getElementById("sitetime").innerHTML = "本站已重新运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+                                                                                " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒 ";
+                                                                        }
+
+                                                                        siteTime();
+                                                                    </script>
+
+                                                                    <br>
+
+                    </div>
+                    <div class="col s12 m4 l4 social-link social-statis">
+                        
+    <a href="https://github.com/ll-zhongyuan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1614294536@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1614294536" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1614294536" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                  <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up" title="返回顶部"></i>
+    </a>
+</div>
+
+
+                    <script src="/libs/materialize/materialize.min.js"></script>
+                    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                    <script src="/libs/aos/aos.js"></script>
+                    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                    <script src="/js/matery.js"></script>
+
+                    
+
+                        
+                            
+                              <script src="/js/wenzi.js" type="text/javascript"></script>
+                              
+                                <!-- 雪花特效 -->
+                                
+                                  <script type="text/javascript">
+                                    // 只在桌面版网页启用特效
+                                    var windowWidth = $(window).width();
+                                    if (windowWidth > 768) {
+                                      document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+                                    }
+                                  </script>
+                                  
+
+                                    <!-- 鼠标星星特效 -->
+                                    
+
+                                        
+
+                                            <!-- Baidu Analytics -->
+
+                                              <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                                                
+                                                  <script
+                                                    src="/libs/others/clicklove.js"
+                                                    async="async"></script>
+                                                  
+                                                    
+                                                      <script async
+                                                        src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                      
+
+                                                        
+
+                                                            <script type="text/javascript">
+                                                              var OriginTitile = document.title,
+                                                                st;
+                                                              document.addEventListener("visibilitychange", function () {
+                                                                document.hidden ? (document.title = "故人江海别,几度隔山川～", clearTimeout(st)) : (document.title =
+                                                                  "今夕复何夕,共此明月光～", st = setTimeout(function () {
+                                                                    document.title = OriginTitile
+                                                                  }, 3e3))
+                                                              })
+                                                            </script>
+                                                            
+
+                                                                <!--腾讯兔小巢-->
+                                                                
+                                                                    
+
+                                                                        
+
+                                                                              
+
+                                                                                  
+                                                                                    <script
+                                                                                      src="/libs/instantpage/instantpage.js"
+                                                                                      type="module"></script>
+                                                                                    
+
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"position":"right","width":180,"height":360,"hOffset":60,"vOffset":0},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+        <script>
+          //按键触发
+          document.onkeydown = function () {
+            //禁止 F12 
+            if (window.event && window.event.keyCode == 123) {
+              event.keyCode = 0;
+              event.returnValue = false;
+            }
+          }
+        </script>
+
+</html>
