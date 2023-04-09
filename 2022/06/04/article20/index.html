@@ -473,17 +473,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-全局属性"><a href="#1-全局属性" class="headerlink" title="1. 全局属性"></a>1. 全局属性</h2><h4 id="1-0-1-vue2"><a href="#1-0-1-vue2" class="headerlink" title="1.0.1. vue2"></a>1.0.1. vue2</h4><ul>
-<li><p>对于一些第三方插件，vue2 中通常使用 prototype 原型来挂载到 vue 对象中</p>
-<p>import Vue from ‘vue’<br>Vue.prototype.$http=Axiox<br>  Vue.prototype.$echart= Echart</p>
-</li>
+<li>对于一些第三方插件，vue2 中通常使用 prototype 原型来挂载到 vue 对象中</li>
 </ul>
+<p><code>import Vue from &#39;vue&#39;</code><br><code>Vue.prototype.$http=Axiox</code><br><code>Vue.prototype.$echart= Echart</code></p>
 <h4 id="1-0-2-vue3"><a href="#1-0-2-vue3" class="headerlink" title="1.0.2. vue3"></a>1.0.2. vue3</h4><ul>
 <li><p>vue3 中提供了一个名为<code>globalProperties</code>的全局属性配置，可以代替 vue2 中的 prototype</p>
-<p>app.config.globalProperties.$http = Axios<br>  app.config.globalProperties.$echart = Echart</p>
+<p><code>app.config.globalProperties.$http = Axios</code><br><code>app.config.globalProperties.$echart = Echart</code></p>
 </li>
 <li><p>使用$http</p>
-<p>import {getCurrentInstance} from ‘vue’</p>
-<p>setup () {<br>const { ctx } = getCurrentInstance();<br>onMounted(() =&gt; {<br>console.log(ctx.$http)<br>})<br>…….<br>}</p>
+<p>import {getCurrentInstance} from ‘vue’<br>setup () {<br>const { ctx } = getCurrentInstance();<br>onMounted(() =&gt; {<br>console.log(ctx.$http)<br>})<br>…….<br>}</p>
 </li>
 </ul>
 <h2 id="2-ref-与-v-for-的生成"><a href="#2-ref-与-v-for-的生成" class="headerlink" title="2. ref 与 v-for 的生成"></a>2. ref 与 v-for 的生成</h2><h4 id="2-0-1-vue2"><a href="#2-0-1-vue2" class="headerlink" title="2.0.1. vue2"></a>2.0.1. vue2</h4><p>vue2 中 v-for 与 ref 一起使用，批量模板引用的时候，获取的 ref 为一个数组</p>
@@ -497,13 +495,13 @@ mounted() &#123;
 <pre><code>&lt;div v-for=&quot;item in 3&quot; :ref=&quot;setItemRef&quot;&gt;&lt;/div&gt; //这里绑定的是函数
 
 setup()&#123;
-        let itemRefs = []
-            const setItemRef = el =&gt; &#123;
-                itemRefs.push(el)
-            &#125;
-            onMounted(() =&gt; &#123;
-                console.log(itemRefs)
-            &#125;)
+    let itemRefs = []
+    const setItemRef = el =&gt; &#123;
+    itemRefs.push(el)
+    &#125;
+    onMounted(() =&gt; &#123;
+        console.log(itemRefs)
+    &#125;)
 &#125;
 </code></pre>
 <p>二者获取 ref 的 dom 方式有变化，但是获取的结果相同</p>
@@ -511,9 +509,7 @@ setup()&#123;
 <h2 id="3-异步组件"><a href="#3-异步组件" class="headerlink" title="3. 异步组件"></a>3. 异步组件</h2><p>在路由中，常常使用懒加载的方式来引入组件</p>
 <h4 id="3-0-1-vue2"><a href="#3-0-1-vue2" class="headerlink" title="3.0.1. vue2"></a>3.0.1. vue2</h4><p><code>component: () =&gt; import(&#39;@/views/homePage/index.vue&#39;),</code></p>
 <h4 id="3-0-2-vue3"><a href="#3-0-2-vue3" class="headerlink" title="3.0.2. vue3"></a>3.0.2. vue3</h4><p>在 vue3 中引入了一个新的方法 —&gt;<code>defineAsyncComponent</code>定义异步组件，来包裹 vue2 引入方式里面的内容</p>
-<pre><code>import &#123; defineAsyncComponent &#125; from &#39;vue&#39;
-component: defineAsyncComponent(() =&gt; import(&#39;./NextPage.vue&#39;))
-</code></pre>
+<p><code>import &#123; defineAsyncComponent &#125; from &#39;vue&#39;</code><br><code>component: defineAsyncComponent(() =&gt; import(&#39;./NextPage.vue&#39;))</code></p>
 <h2 id="4-自定义指令"><a href="#4-自定义指令" class="headerlink" title="4. 自定义指令"></a>4. 自定义指令</h2><h3 id="4-1-改变钩子函数的命名"><a href="#4-1-改变钩子函数的命名" class="headerlink" title="4.1. 改变钩子函数的命名"></a>4.1. 改变钩子函数的命名</h3><h4 id="4-1-1-vue2"><a href="#4-1-1-vue2" class="headerlink" title="4.1.1. vue2"></a>4.1.1. vue2</h4><p>vue2 中绑定的钩子函数为</p>
 <ul>
 <li><strong>bind</strong> - 指令绑定到元素后发生。只发生一次。</li>
@@ -533,16 +529,21 @@ component: defineAsyncComponent(() =&gt; import(&#39;./NextPage.vue&#39;))
 </ul>
 <h3 id="4-2-在钩子函数中引用组件实例的方式"><a href="#4-2-在钩子函数中引用组件实例的方式" class="headerlink" title="4.2. 在钩子函数中引用组件实例的方式"></a>4.2. 在钩子函数中引用组件实例的方式</h3><p>某些情况下需要去获取组件中实例的某些属性</p>
 <h4 id="4-2-1-vue2"><a href="#4-2-1-vue2" class="headerlink" title="4.2.1. vue2"></a>4.2.1. vue2</h4><ul>
-<li><p>需要通过 vnod 来获取实例</p>
-<p>Vue.directive(‘has’, {<br>inserted: (el, binding, vnode) =&gt; checkPermission(el, binding, vnode),<br>});</p>
-<p>export const checkPermission = (el, binding, vnode) =&gt; {<br>…<br>const permissionArr = vnode.context.$store.state.permissionId //所拥有的所有权限 id<br>…<br>}</p>
-</li>
+<li>需要通过 vnod 来获取实例</li>
 </ul>
+<pre><code>Vue.directive(&#39;has&#39;, &#123;inserted: (el, binding, vnode) =&gt; checkPermission(el, binding, vnode),
+&#125;);
+export const checkPermission = (el, binding, vnode) =&gt; &#123;
+    const permissionArr = vnode.context.$store.state.permissionId //所拥有的所有权限 id
+&#125;
+</code></pre>
 <h4 id="4-2-2-vue3"><a href="#4-2-2-vue3" class="headerlink" title="4.2.2. vue3"></a>4.2.2. vue3</h4><ul>
-<li><p>从 binding 中去获取对象</p>
-<p>export const checkPermission = (el, binding, vnode) =&gt; {<br>…<br>const permissionArr =binding.instance.$store.state.permissionId //所拥有的所有权限 id<br>…<br>}</p>
-</li>
+<li>从 binding 中去获取对象</li>
 </ul>
+<pre><code>export const checkPermission = (el, binding, vnode) =&gt; &#123;
+const permissionArr =binding.instance.$store.state.permissionId //所拥有的所有权限 id
+&#125;
+</code></pre>
 <h4 id="4-2-3-v-bind-”-attrs”"><a href="#4-2-3-v-bind-”-attrs”" class="headerlink" title="4.2.3. v-bind=”$attrs”"></a>4.2.3. v-bind=”$attrs”</h4><h2 id="5-自定义元素元素的交互"><a href="#5-自定义元素元素的交互" class="headerlink" title="5. 自定义元素元素的交互"></a>5. 自定义元素元素的交互</h2><h3 id="5-1-is-的用法"><a href="#5-1-is-的用法" class="headerlink" title="5.1. is 的用法"></a>5.1. is 的用法</h3><h4 id="5-1-1-vue2"><a href="#5-1-1-vue2" class="headerlink" title="5.1.1. vue2"></a>5.1.1. vue2</h4><ul>
 <li>组件：</li>
 </ul>
@@ -582,27 +583,24 @@ filters: &#123;
 </code></pre>
 <h4 id="7-1-2-vue3"><a href="#7-1-2-vue3" class="headerlink" title="7.1.2. vue3"></a>7.1.2. vue3</h4><ul>
 <li><p>vue3 用 computed 或者 methods 来定义</p>
-  <p></p>
-  
-<p>  import {    </p>
-<pre><code>  computed,
-  ref,    
-</code></pre>
-<p>  } from ‘vue’;</p>
-<p>  setup(){</p>
-<pre><code>  let message = ref(&#39;ABC&#39;)
-  let messageToLower = computed(() =&gt; &#123;
-      // console.log(message)
-      return message.value.toLowerCase()
-  &#125;)
-  return&#123;
-      messageToLower,
-  &#125;
-  
-</code></pre>
-<p>  }</p>
+<p>  <code>&lt;p&gt;&#123;&#123;messageToLower&#125;&#125;&lt;/p&gt;</code></p>
 </li>
 </ul>
+<pre><code>import &#123;    
+    computed,
+    ref,    
+&#125; from &#39;vue&#39;;
+setup()&#123;
+    let message = ref(&#39;ABC&#39;)
+    let messageToLower = computed(() =&gt; &#123;
+        // console.log(message)
+        return message.value.toLowerCase()
+    &#125;)
+    return&#123;
+        messageToLower,
+    &#125;
+&#125;
+</code></pre>
 <h3 id="7-2-全局过滤器"><a href="#7-2-全局过滤器" class="headerlink" title="7.2. 全局过滤器"></a>7.2. 全局过滤器</h3><h4 id="7-2-1-vue2"><a href="#7-2-1-vue2" class="headerlink" title="7.2.1. vue2"></a>7.2.1. vue2</h4><pre><code>Vue.filter(&#39;toLower&#39;,  (value)=&gt; &#123;
     return value.toLowerCase()
 &#125;)
@@ -1134,15 +1132,17 @@ filters: &#123;
                                                     
                                                         <span id="busuanzi_container_site_pv">
                                                             &nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                                                                1<span id="busuanzi_value_site_pv"
-                                                                    class="white-color"></span>
+                                                                <span style="color: #fff">1<span id="busuanzi_value_site_pv"
+                                                                    class="white-color"></span></span>
+                                                                
                                                         </span>
                                                         
                                                             
                                                                 <span id="busuanzi_container_site_uv">
                                                                     &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                                                                        1<span id="busuanzi_value_site_uv"
-                                                                            class="white-color"></span>
+                                                                        <span style="color: #fff">1<span id="busuanzi_value_site_uv"
+                                                                            class="white-color"></span></span>
+                                                                        
                                                                 </span>
                                                                 
                                                                     <br>
