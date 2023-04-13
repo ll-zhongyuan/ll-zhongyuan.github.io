@@ -1,8 +1,8 @@
 ---
 title: 冗余导航（路由冗余）解决方式
 author: 中元
-img: /medias/banner/16.jpg
-coverImg: /medias/banner/16.jpg
+img: https://ox.zhongyuan.space/hexo/banner/16.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/16.jpg
 top: false
 cover: false
 toc: false

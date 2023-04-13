@@ -1,8 +1,8 @@
 ---
 title: 关于ES6，你知道多少
 author: 中元
-img: /medias/banner/23.jpg
-coverImg: /medias/banner/23.jpg
+img: https://ox.zhongyuan.space/hexo/banner/23.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/23.jpg
 top: false
 cover: false
 toc: true

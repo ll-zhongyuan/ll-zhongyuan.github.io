@@ -1,8 +1,8 @@
 ---
 title: JavaScript事件、事件类型、事件流和事件模型
 author: 中元
-img: /medias/banner/11.jpg
-coverImg: /medias/banner/11.jpg
+img: https://ox.zhongyuan.space/hexo/banner/11.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/11.jpg
 top: false
 cover: false
 toc: false

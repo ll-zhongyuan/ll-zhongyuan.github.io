@@ -1,8 +1,8 @@
 ---
 title: 13 行 JavaScript 代码让你看起来像是高手
 author: 中元
-img: /medias/banner/15.jpg
-coverImg: /medias/banner/15.jpg
+img: https://ox.zhongyuan.space/hexo/banner/15.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/15.jpg
 top: false
 cover: false
 toc: true

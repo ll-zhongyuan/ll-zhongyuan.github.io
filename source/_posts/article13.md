@@ -1,8 +1,8 @@
 ---
 title: MySQL索引详解
 author: 中元
-img: /medias/banner/9.jpg
-coverImg: /medias/banner/9.jpg
+img: https://ox.zhongyuan.space/hexo/banner/9.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/9.jpg
 top: false
 cover: false
 toc: false

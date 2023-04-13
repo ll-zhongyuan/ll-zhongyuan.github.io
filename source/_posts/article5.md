@@ -1,8 +1,8 @@
 ---
 title: HTML5时钟
 author: 中元
-img: /medias/banner/4.jpg
-coverImg: /medias/banner/4.jpg
+img: https://ox.zhongyuan.space/hexo/banner/4.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/4.jpg
 top: false
 cover: false
 toc: true

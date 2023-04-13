@@ -1,8 +1,8 @@
 ---
 title: Vue3项目搭建规范
 author: 中元
-img: /medias/banner/10.jpg
-coverImg: /medias/banner/10.jpg
+img: https://ox.zhongyuan.space/hexo/banner/10.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/10.jpg
 top: false
 cover: false
 toc: true

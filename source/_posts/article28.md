@@ -1,8 +1,8 @@
 ---
 title: 防止数据重复提交的6种方法
 author: 中元
-img: /medias/banner/20.jpg
-coverImg: /medias/banner/20.jpg
+img: https://ox.zhongyuan.space/hexo/banner/20.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/20.jpg
 top: false
 cover: false
 toc: true

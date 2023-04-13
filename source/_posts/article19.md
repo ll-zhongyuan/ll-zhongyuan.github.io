@@ -1,8 +1,8 @@
 ---
 title: webapck
 author: 中元
-img: /medias/banner/13.jpg
-coverImg: /medias/banner/13.jpg
+img: https://ox.zhongyuan.space/hexo/banner/13.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/13.jpg
 top: false
 cover: false
 toc: true

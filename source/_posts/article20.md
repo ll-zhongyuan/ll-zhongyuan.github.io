@@ -1,8 +1,8 @@
 ---
 title: vue2与vue3
 author: 中元
-img: /medias/banner/14.jpg
-coverImg: /medias/banner/14.jpg
+img: https://ox.zhongyuan.space/hexo/banner/14.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/14.jpg
 top: false
 cover: false
 toc: true

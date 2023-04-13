@@ -1,8 +1,8 @@
 ---
 title: 如何基于 React 封装一个组件
 author: 中元
-img: /medias/banner/img/0003.jpg
-coverImg: /medias/banner/img/0003.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0003.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0003.jpg
 top: true
 cover: true
 toc: true

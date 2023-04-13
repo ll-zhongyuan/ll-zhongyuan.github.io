@@ -1,8 +1,8 @@
 ---
 title: upload
 author: 中元
-img: /medias/banner/img/0001.jpg
-coverImg: /medias/banner/img/0001.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0001.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0001.jpg
 top: true
 cover: true
 toc: true

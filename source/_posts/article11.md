@@ -1,8 +1,8 @@
 ---
 title: 使用 CSS 轻松实现一些高频出现的奇形怪状按钮
 author: 中元
-img: /medias/banner/img/0008.jpg
-coverImg: /medias/banner/img/0008.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0008.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0008.jpg
 top: false
 cover: true
 toc: true

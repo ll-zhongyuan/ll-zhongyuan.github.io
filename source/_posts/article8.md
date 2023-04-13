@@ -1,8 +1,8 @@
 ---
 title: 基于Vue的天地图入门
 author: 中元
-img: /medias/banner/6.jpg
-coverImg: /medias/banner/6.jpg
+img: https://ox.zhongyuan.space/hexo/banner/6.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/6.jpg
 top: false
 cover: false
 toc: true

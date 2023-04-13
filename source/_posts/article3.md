@@ -1,8 +1,8 @@
 ---
 title: go 自定义http.Client
 author: 中元
-img: /medias/banner/3.jpg
-coverImg: /medias/banner/3.jpg
+img: https://ox.zhongyuan.space/hexo/banner/3.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/3.jpg
 top: false
 cover: false
 toc: true

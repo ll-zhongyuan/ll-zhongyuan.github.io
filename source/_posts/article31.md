@@ -1,8 +1,8 @@
 ---
 title: keep-alive
 author: 中元
-img: /medias/banner/24.jpg
-coverImg: /medias/banner/24.jpg
+img: https://ox.zhongyuan.space/hexo/banner/24.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/24.jpg
 top: false
 cover: false
 toc: true

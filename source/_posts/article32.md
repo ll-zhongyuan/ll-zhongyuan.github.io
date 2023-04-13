@@ -1,8 +1,8 @@
 ---
 title: Vue响应式原理
 author: 中元
-img: /medias/banner/1.jpg
-coverImg: /medias/banner/1.jpg
+img: https://ox.zhongyuan.space/hexo/banner/1.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/1.jpg
 top: false
 cover: false
 toc: false

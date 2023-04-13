@@ -1,8 +1,8 @@
 ---
 title: 炫酷的 CSS 文字特效
 author: 中元
-img: /medias/banner/17.jpg
-coverImg: /medias/banner/17.jpg
+img: https://ox.zhongyuan.space/hexo/banner/17.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/17.jpg
 top: false
 cover: false
 toc: true

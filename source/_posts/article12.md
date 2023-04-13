@@ -1,8 +1,8 @@
 ---
 title: html完整语法学习
 author: 中元
-img: /medias/banner/8.jpg
-coverImg: /medias/banner/8.jpg
+img: https://ox.zhongyuan.space/hexo/banner/8.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/8.jpg
 top: false
 cover: false
 toc: true

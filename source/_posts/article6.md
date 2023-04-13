@@ -1,8 +1,8 @@
 ---
 title: React框架-总结
 author: 中元
-img: /medias/banner/5.jpg
-coverImg: /medias/banner/5.jpg
+img: https://ox.zhongyuan.space/hexo/banner/5.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/5.jpg
 top: false
 cover: false
 toc: true

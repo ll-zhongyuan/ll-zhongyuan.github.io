@@ -1,8 +1,8 @@
 ---
 title: 30个类手写Spring核心原理之自定义ORM
 author: 中元
-img: /medias/banner/img/0006.jpg
-coverImg: /medias/banner/img/0006.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0006.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0006.jpg
 top: true
 cover: true
 toc: true

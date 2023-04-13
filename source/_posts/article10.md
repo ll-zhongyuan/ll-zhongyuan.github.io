@@ -1,8 +1,8 @@
 ---
 title: windows注册表自启项
 author: 中元
-img: /medias/banner/7.jpg
-coverImg: /medias/banner/7.jpg
+img: https://ox.zhongyuan.space/hexo/banner/7.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/7.jpg
 top: false
 cover: false
 toc: false

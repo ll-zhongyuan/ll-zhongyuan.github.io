@@ -1,8 +1,8 @@
 ---
 title: JS设计模式之建造者模式
 author: 中元
-img: /medias/banner/2.jpg
-coverImg: /medias/banner/2.jpg
+img: https://ox.zhongyuan.space/hexo/banner/2.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/2.jpg
 top: false
 cover: false
 toc: false

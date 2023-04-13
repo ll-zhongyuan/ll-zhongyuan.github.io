@@ -1,8 +1,8 @@
 ---
 title: ES6 Promise用法
 author: 中元
-img: /medias/banner/12.jpg
-coverImg: /medias/banner/12.jpg
+img: https://ox.zhongyuan.space/hexo/banner/12.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/12.jpg
 top: false
 cover: false
 toc: true

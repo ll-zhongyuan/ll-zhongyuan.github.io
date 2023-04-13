@@ -1,8 +1,8 @@
 ---
 title: Vite
 author: 中元
-img: /medias/banner/18.jpg
-coverImg: /medias/banner/18.jpg
+img: https://ox.zhongyuan.space/hexo/banner/18.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/18.jpg
 top: false
 cover: false
 toc: true

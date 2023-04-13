@@ -1,8 +1,8 @@
 ---
 title: 阅读须知
 author: 中元
-img: /medias/featureimages/4.jpg
-coverImg: /medias/featureimages/4.jpg
+img: https://ox.zhongyuan.space/hexo/featureimages/4.jpg
+coverImg: https://ox.zhongyuan.space/hexo/featureimages/4.jpg
 top: true
 cover: false
 toc: false

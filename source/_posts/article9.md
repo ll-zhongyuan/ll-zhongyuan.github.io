@@ -1,8 +1,8 @@
 ---
 title: Linux基础学习
 author: 中元
-img: /medias/banner/img/0009.jpg
-coverImg: /medias/banner/img/0009.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0009.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0009.jpg
 top: true
 cover: true
 toc: true

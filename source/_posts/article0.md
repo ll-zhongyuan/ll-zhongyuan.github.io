@@ -1,8 +1,8 @@
 ---
 title: 数组扁平化
 author: 中元
-img: /medias/banner/img/0004.jpg
-coverImg: /medias/banner/img/0004.jpg
+img: https://ox.zhongyuan.space/hexo/banner/img/0004.jpg
+coverImg: https://ox.zhongyuan.space/hexo/banner/img/0004.jpg
 top: true
 cover: true
 toc: true
