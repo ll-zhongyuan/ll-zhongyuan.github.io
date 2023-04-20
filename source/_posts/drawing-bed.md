@@ -3,8 +3,8 @@ title: 个人图床
 author: 中元
 img: https://ox.zhongyuan.space/hexo/banner/10.jpg
 coverImg: https://ox.zhongyuan.space/hexo/banner/10.jpg
-top: false
-cover: false
+top: true
+cover: true
 toc: true
 mathjax: true
 summary: 七牛云个人图床
