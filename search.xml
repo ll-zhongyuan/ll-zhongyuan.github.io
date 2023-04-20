@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>并发任务控制</title>
+      <link href="/2023/04/09/concurrentTasks/"/>
+      <url>/2023/04/09/concurrentTasks/</url>
+      
+        <content type="html"><![CDATA[<p>实现一个批量请求函数 <code>multiRequest()</code>，要求如下：</p><ul><li>要求最大并发数 <code>maxNum</code></li><li>每当有一个请求返回，就留下一个空位，可以增加新的请求</li><li>所有请求完成后，结果按照 <code>urls</code> 里面的顺序依次打出</li></ul><p>这道题目我想很多人应该都或多或少都有见过，那符合这个题目的需求的场景都有哪些呢？</p><p>假设现在有这么一种场景：现有 30 个异步请求需要发送，但由于某些原因，我们必须将同一时刻并发请求数量控制在 5 个以内，同时还要尽可能快速的拿到响应结果。<br>应该怎么做？</p><p>前天又遇到了，这里放出我的解决方法</p><p>现有条件是</p><ul><li>需要一个最大并发数 <code>maxNum</code></li><li>还需要一个变量（为了监听正在运行的任务数量） <code>runningCount</code></li><li>一个任务列表 <code>tasks</code></li></ul><p>首先创建一个函数，这个函数主要为了添加任务，添加之后需要返回一个<code>Promise</code></p><pre><code>add(task) &#123;    return new Promise((resolve, reject) =&gt; &#123;        this.tasks.push(&#123;            task,            resolve,            reject        &#125;)        this._run()    &#125;)&#125;</code></pre><p>我并没有将<code>resolve</code>和<code>reject</code>抛出，因为我其实并不知道这个函数是执行成功还是执行失败，那我现在能调用这个函数吗？很明显是不行的，因为很有可能目前正在运行的任务数量已经达到了我们设置的最大并发数<code>maxNum</code>，这就意味着现在的任务只能等。所以这里能做什么呢？既然不能调用这个任务，那就把这个任务加到一个集合里边，让它等待被调用</p><p>这里写一个辅助函数</p><pre><code>_run() &#123;    while (this.runningCount &lt; this.maxNum &amp;&amp; this.tasks.length) &#123;        const &#123; task, resolve, reject &#125; = this.tasks.shift()        this.runningCount++        task().then(resolve, reject).finally(() =&gt; &#123;                this.runningCount--                    // 递归调用辅助方法                this._run()            &#125;)    &#125;&#125;</code></pre><p>将这些全部封装在一个构造函数里面，创建构造函数实例<br><code>const superTask = new SuperTask()</code></p><p>然后需要一个<code>Promise</code>请求，这里用一个延时函数代替</p><pre><code>function timeout(time) &#123;    return new Promise((resolve) =&gt; &#123;        setTimeout(() =&gt; &#123;            resolve()        &#125;, time)    &#125;)&#125;</code></pre><p>为了测试构造函数的功能，还需要再写一个辅助函数</p><pre><code>function addTask(time, name) &#123;    superTask        add(() =&gt; timeout(time))        .then(() =&gt; &#123;            console.log(`任务$&#123;name&#125;完成`);        &#125;)&#125;</code></pre><p>最后调用测试一下</p><pre><code>addTask(10000, &quot;一&quot;)    // 10000ms 后输出：任务一完成addTask(5000, &quot;二&quot;)     // 5000ms 后输出：任务二完成addTask(2000, &quot;三&quot;)     // 2000ms 后输出：任务三完成addTask(3000, &quot;四&quot;)     // 5000ms 后输出：任务四完成addTask(8000, &quot;五&quot;)     // 13000ms 后输出：任务五完成addTask(6000, &quot;六&quot;)     // 11000ms 后输出：任务六完成addTask(4000, &quot;七&quot;)     // 14000ms 后输出：任务七完成</code></pre><p>也可以按照要求将请求全部放在数组中，然后调用<br>这里只模拟七个请求，主要是懒得 CV 了，本来想只写五个的，不过那好像太少了 😁。（我设置的最大并发数量是 3 个）</p><p>想要实际测试的朋友可以直接取源码进行测试</p><p>代码我放在<a href="https://github.com/ll-zhongyuan/informal-essay/blob/main/fore-end-demo/%E5%B9%B6%E5%8F%91%E4%BB%BB%E5%8A%A1%E6%8E%A7%E5%88%B6/%E5%B9%B6%E5%8F%91%E4%BB%BB%E5%8A%A1%E6%8E%A7%E5%88%B6.html">GitHub</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>axios</title>
       <link href="/2023/03/27/axios/"/>
       <url>/2023/03/27/axios/</url>
