@@ -10,7 +10,6 @@ mathjax: false
 summary: css是前端开发者所必备的技能！那么，在开发过程中你对css效果又了解多少呢？在社区中看到一篇关于css文字特效的文章，摘取部分分享给大家
 tags:
   - CSS
-  - 转载
 categories: CSS
 abbrlink: 39265
 date: 2022-09-01 11:06:30

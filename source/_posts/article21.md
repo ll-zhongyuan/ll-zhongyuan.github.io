@@ -10,7 +10,6 @@ mathjax: false
 summary: 有趣的13 行 JavaScript 代码
 tags:
   - JavaScript
-  - 转载
 categories: JavaScript
 abbrlink: 3289
 date: 2022-06-22 18:06:30

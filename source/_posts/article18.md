@@ -12,7 +12,6 @@ summary: >-
   规定，Promise对象是一个构造函数，用来生成Promise实例。
 tags:
   - ES6
-  - 转载
 categories: ES6
 abbrlink: 40975
 date: 2022-05-08 13:06:30

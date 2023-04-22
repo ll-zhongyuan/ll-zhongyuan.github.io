@@ -3,8 +3,8 @@ title: 欲罢不能的node.js
 author: 中元
 img: https://ox.zhongyuan.space/hexo/banner/img/0005.jpg
 coverImg: https://ox.zhongyuan.space/hexo/banner/img/0005.jpg
-top: true
-cover: true
+top: false
+cover: false
 toc: true
 mathjax: true
 summary: 从来没有一门语言让我像对node.js一样的着迷
