@@ -9,8 +9,8 @@ toc: true
 mathjax: true
 summary: >-
   八股文——旧时科举考试的一种文体，也称制义、制艺、时文、八比文。通俗来说（八股文就是指文章的八个部分）而计算机技术相关岗位面试中，八股文多指面试中常出现的问题，往往都是一些看起来高大上但是实际工作中没啥用的东西（科普结束，原文开始）
-tags: 前端
-categories: 前端
+tags: JavaScript
+categories: JavaScript
 abbrlink: 60722
 date: 2022-07-18 13:06:30
 password:

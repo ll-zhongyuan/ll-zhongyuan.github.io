@@ -8,8 +8,8 @@ cover: true
 toc: true
 mathjax: true
 summary: 七牛云个人图床
-tags: Hexo
-categories: Hexo
+tags: 博客
+categories: 博客
 abbrlink: 2
 date: 2023-03-15 14:06:30
 password:

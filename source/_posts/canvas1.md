@@ -8,8 +8,12 @@ cover: false
 toc: false
 mathjax: false
 summary: 使用canvas完成基本绘图
-tags: canvas
-categories: canvas
+tags: 
+- JavaScript
+- canvas
+categories: 
+- JavaScript
+- canvas
 abbrlink: 1
 date: 2023-02-16 14:06:30
 password:

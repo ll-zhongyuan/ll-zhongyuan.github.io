@@ -8,8 +8,12 @@ cover: false
 toc: false
 mathjax: false
 summary: 使用canvas完成音频可视化
-tags: canvas
-categories: canvas
+tags: 
+- JavaScript
+- canvas
+categories: 
+- JavaScript
+- canvas
 abbrlink: 9
 date: 2023-02-27 14:06:30
 password:

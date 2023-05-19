@@ -8,8 +8,8 @@ cover: false
 toc: true
 mathjax: true
 summary: Hexo+Github:个人博客网站搭建完全教程（三：优化）
-tags: Hexo
-categories: Hexo
+tags: 博客
+categories: 博客
 abbrlink: 21996
 date: 2022-03-05 14:06:30
 password:

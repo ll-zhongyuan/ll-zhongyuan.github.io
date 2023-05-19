@@ -8,8 +8,8 @@ cover: false
 toc: true
 mathjax: false
 summary: 用新的HTML规范搞事情...
-tags: HTML5
-categories: HTML5
+tags: HTML
+categories: HTML
 abbrlink: 28556
 date: 2020-11-19 21:06:30
 password:
