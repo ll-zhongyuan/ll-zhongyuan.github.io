@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Vue</title>
+      <title>使用void 0 替代 undefined</title>
       <link href="/2023/05/12/void0/"/>
       <url>/2023/05/12/void0/</url>
       
@@ -13,14 +13,14 @@
       
       <categories>
           
-          <category> Vue </category>
+          <category> JavaScript </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Vue </tag>
+            <tag> JavaScript </tag>
             
         </tags>
       
