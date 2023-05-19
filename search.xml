@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>音视频自动播放</title>
+      <link href="/2023/05/20/AutomaticPlayback/"/>
+      <url>/2023/05/20/AutomaticPlayback/</url>
+      
+        <content type="html"><![CDATA[<p>前端音视频自动播放一直都是一个玄学问题</p><p>无论是 B 站还是抖音，都可以实现打开视频自动播放，但是在我写的页面中就不行</p><p>无论是使用<code>autoplay</code>还是 js 调用<code>play</code>方法都不能实现</p><p>后来了解到一个相关知识——浏览器自动播放策略<br>以谷歌为例<br><img src="https://ox.zhongyuan.space/hexo/articleIllustrations/other/%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E7%AD%96%E7%95%A5.jpg" alt="自动播放策略"></p><p>也很容易理解，避免恶意广告之类的东西打扰到用户嘛</p><p>要实现浏览器自动播放也不是完全不允许<br><img src="https://ox.zhongyuan.space/hexo/articleIllustrations/other/%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6.jpg" alt="自动播放前提条件"></p><p>这里提到一个叫做媒体参与度的东西<br>特意去查了相关资料<br><img src="https://ox.zhongyuan.space/hexo/articleIllustrations/other/%E5%AA%92%E4%BD%93%E5%8F%82%E4%B8%8E%E5%BA%A60.jpg" alt="媒体参与度"></p><p>下面是我的媒体参与度指数<br><img src="https://ox.zhongyuan.space/hexo/articleIllustrations/other/%E5%AA%92%E4%BD%93%E5%8F%82%E4%B8%8E%E5%BA%A6.jpg"></p><p>可以看到B站的指数是 0.88 而常用开发地址 localhost:52330 只有0.2</p><p>我也尝试寻找相关方法修改这个指数，结果很明显，这玩意儿是不可修改的</p><p>那只有退而求其次，这里提供两个解决方案</p><p><img src="https://ox.zhongyuan.space/hexo/articleIllustrations/other/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.jpg" alt="解决方案"></p><p>方案一：引导用户进行交互操作，进而播放<br>这里是通过添加一个播放按钮来实现的</p><pre><code>&lt;div&gt;    &lt;video src=&quot;test.mp4&quot; autoplay&gt;&lt;/video&gt;    &lt;div class=&quot;modal&quot;&gt;        &lt;button class=&quot;play&quot;&gt;开始播放&lt;/button&gt;    &lt;/div&gt;&lt;/div&gt;    &lt;script&gt;        // 方案一：互动后播放        const vdo = document.querySelector(&#39;video&#39;);        const modal = document.querySelector(&#39;modal&#39;);        const btn = document.querySelector(&#39;btn&#39;);        async function palay() &#123;            try &#123;                await vdo.play();                modal.style.display = &#39;none&#39;;                btn.removeEventListener(&#39;click&#39;, play);            &#125; catch (err) &#123;                modal.style.display = &#39;flex&#39;;                btn.addEventListener(&#39;click&#39;, play);            &#125;        &#125;        play()    &lt;/script&gt;</code></pre><p>方案二：静音播放，根据条件判断是否打开声音</p><pre><code>&lt;div&gt;    &lt;video src=&quot;test.mp4&quot; autoplay&gt;&lt;/video&gt;    &lt;div class=&quot;modal&quot;&gt;        &lt;button class=&quot;play&quot;&gt;打开声音&lt;/button&gt;    &lt;/div&gt;&lt;/div&gt;&lt;script&gt;    // 方案二：互动后出声    const vdo = document.querySelector(&#39;video&#39;);    const modal = document.querySelector(&#39;modal&#39;);    const btn = document.querySelector(&#39;btn&#39;);    function play()&#123;        vdo.muted = true ;  //静音        vdo.play();        const ctx = new AudioContext();        const canAutoPlay = ctx.state === &#39;running&#39;;        ctx.close();        if(canAutoPlay)&#123;            vdo.muted = false;            modal.style.display = &#39;none&#39;;            btn.removeEventListener(&#39;click&#39;,play);        &#125;else&#123;            modal.style.display = &#39;flex&#39;;            btn.addEventListener(&#39;click&#39;,play);        &#125;    &#125;    play()    &lt;/script&gt;</code></pre><p>解释下方案二<br>这里用<code>AudioContext</code>来创建了一个音频上下文<br>通过判断<code>AudioContext.state</code>的值来判断当前状态<br> <em><code>AudioContext.state</code></em> 有三个返回值</p><ul><li>suspended： audio 被阻塞了</li><li>running：audio 正常运行</li><li>closed：audio 被关闭了</li></ul><p>详情可以查看<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext">mdn AudioContext</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext">mdn AudioContext.state</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用void 0 替代 undefined</title>
       <link href="/2023/05/12/void0/"/>
       <url>/2023/05/12/void0/</url>
