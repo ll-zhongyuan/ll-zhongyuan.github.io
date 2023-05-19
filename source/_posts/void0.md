@@ -1,5 +1,5 @@
 ---
-title: Vue
+title: 使用void 0 替代 undefined
 author: 中元
 img: https://ox.zhongyuan.space/hexo/featureimages/3.jpg
 coverImg: https://ox.zhongyuan.space/hexo/featureimages/3.jpg
@@ -8,8 +8,8 @@ cover: false
 toc: false
 mathjax: false
 summary: 为什么要使用void 0 替代 undefined
-tags: Vue
-categories: Vue
+tags: JavaScript
+categories: JavaScript
 abbrlink: 1
 date: 2023-05-12 22:06:30
 password:
